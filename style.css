@@ -1,0 +1,346 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --black: #0f0d0a;
+    --grey-dark: #1a1712;
+    --grey-light: #242018;
+    --gold: #d4a843;
+    --gold-light: #e8c870;
+    --gold-dim: rgba(212,168,67,0.1);
+    --text: #f2ece0;
+    --text-dim: #6a6050;
+}
+
+body {
+    background: var(--black);
+    font-family: 'Tajawal', Arial, Helvetica, sans-serif;
+}
+
+.header-image {
+    overflow: hidden;
+    height: 40vh;
+    margin-bottom: -1%;
+}
+
+.header-image img {
+    width: 100%;
+    height: 95%;
+    object-fit: cover;
+}
+
+.header-title {
+    min-height: 10vh;
+    background: var(--gold);
+    font-size: clamp(1rem, 1vw, 2rem);
+    padding: 1.8vw 8vw;
+    display: flex;
+    align-items: center;
+    color: var(--black);
+}
+
+.header-text {
+    padding: 4vw 8vw;
+    max-width: 100ch;
+}
+
+.header-text p {
+    color: var(--text-dim);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    margin-bottom: 3rem;
+}
+
+.header-text a {
+    text-decoration: none;
+    border: 1px solid var(--gold);
+    color: var(--text-dim);
+    font-size: clamp(1rem, 1vw, 2rem);
+    font-weight: 500;
+    padding: 1vw 1.5vw;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.header-text a:hover {
+    background: var(--gold);
+    color: var(--grey-light);
+}
+
+.about-section {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6vw 8vw;
+}
+
+.about-image {
+    width: 100%;
+}
+
+.about-image img {
+    height: 400px;
+    width: 500px;
+    border: 4px solid var(--grey-light);
+}
+
+.about-text span {
+    display: block;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.about-text h2 {
+    color: var(--text);
+    margin-bottom: 1rem;
+    font-size: clamp(1.2rem, 2.2vw, 2.2rem);
+}
+
+.about-text p {
+    color: var(--text-dim);
+    line-height: 1.8;
+    text-align: justify;
+    font-size: clamp(1.2rem, 1.3vw, 1.8rem);
+    font-weight: 500;
+    padding-left: 12vw;
+}
+
+.services-section {
+    padding: 6vw 8vw;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.service {
+    border: 1px solid var(--gold-dim);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--grey-dark);
+    padding: 3vw 2vw 3vw 1vw;
+    transition: border 0.2s ease;
+    cursor: pointer;
+}
+
+.service:hover {
+    border: 1px solid var(--gold);
+}
+
+.service h3 {
+    color: var(--text);
+    font-size: clamp(1rem, 1.3vw, 1.8rem);
+    margin-bottom: 0.4rem;
+}
+
+.service p {
+    color: var(--text-dim);
+    font-size: clamp(1rem, 1.3vw, 1.8rem);
+}
+
+.stats-section {
+    padding: 6vw 8vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stats {
+    text-align: center;
+    direction: ltr;
+}
+
+.stats span {
+    font-size: 4rem;
+    font-weight: 600;
+    color: var(--gold);
+}
+
+.stats p {
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.form-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3vw 8vw;
+    border-bottom: 1px solid var(--gold);
+}
+
+.form-text h2 {
+    color: var(--text);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.form-text span {
+    color: var(--gold);
+    font-size: 1.2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 3vw 8vw;
+}
+
+form > * {
+    background: var(--grey-light);
+    outline: none;
+    border: 1px solid var(--gold-dim);
+    padding: 2vw;
+    width: 50%;
+    resize: none;
+    text-align: right;
+    color: var(--gold-dim);
+    font-size: clamp(1.1rem, 1vw, 1.5rem);
+    font-weight: 500;
+    font-family: 'Tajawal', Arial, Helvetica, sans-serif;
+    transition: border 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border: 1px solid var(--gold);
+}
+
+form button {
+    width: 30%;
+    padding: 1.5vw;
+    text-align: center;
+    background: var(--gold);
+    font-weight: 500;
+    color: var(--grey-dark);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+form button:hover {
+    background: var(--gold-light);
+}
+
+footer {
+    border-top: 1px solid var(--gold);
+    padding: 3vw 0;
+    color: var(--text-dim);
+    text-align: center;
+    font-weight: 600;
+    font-size: clamp(1rem, 1.3vw, 2rem);
+}
+
+@media (max-width: 767px) {
+    .header-image {
+        height: 20vh;
+        margin-bottom: -3%;
+    }
+    .header-text {
+        padding: 12vw 8vw;
+    }
+    .header-text a {
+        padding: 2.5vw 4vw;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+    .header-text a:active {
+        background: var(--gold);
+        color: var(--grey-light);
+    }
+    .about-section {
+        display: flex;
+        flex-direction: column;
+        padding: 12vw 8vw;
+    }
+    .about-text {
+        padding: 8vw 0;
+    }
+    .about-text p {
+        padding-left: 0;
+    }
+    .about-image {
+        text-align: center;
+    }
+    .about-image img {
+        width: 320px;
+        height: 250px;
+    }
+    .services-section {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+    .service {
+        padding: 6vw 3vw;
+    }
+    .stats-section {
+        flex-direction: column;
+        gap: 30px;
+        padding: 14vw 8vw;
+    }
+    .form-text {
+        padding: 8vw;
+    }
+    form {
+        padding: 20vw 0;
+    }
+    form > * {
+        width: 75%;
+        padding: 5vw;
+    }
+    form button {
+        padding: 3vw;
+        width: 40%;
+        margin-top: 1rem;
+    }
+    footer {
+        padding: 8vw;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .header-image {
+        margin-bottom: -3%;
+        height: 25vh;
+    }
+    .header-text {
+        padding: 6vw 8vw;
+    }
+    .header-text p {
+        margin-bottom: 3rem;
+    }
+    .header-text a {
+        padding: 2vw 3vw;
+    }
+    .about-section {
+        flex-direction: column;
+    }
+    .about-image {
+        text-align: center;
+    }
+    .about-image img {
+        margin-bottom: 3rem;
+        width: 600px;
+    }
+    .about-text p {
+        padding-left: 0;
+    }
+    .stats-section {
+        flex-direction: row;
+        gap: 0;
+    }
+    form {
+        padding: 10vw;
+    }
+    form > * {
+        width: 60%;
+        padding: 2.5vw;
+    }
+    form button {
+        margin-top: 1.4rem;
+    }
+}
