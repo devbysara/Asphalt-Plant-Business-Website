@@ -22,20 +22,19 @@ body {
 
 .header-image {
     overflow: hidden;
-    height: 40vh;
-    margin-bottom: -1%;
+    height: clamp(30vh, 40vw, 45vh);
 }
 
 .header-image img {
     width: 100%;
-    height: 95%;
+    height: 100%;
     object-fit: cover;
 }
 
 .header-title {
     min-height: 10vh;
     background: var(--gold);
-    font-size: clamp(1rem, 1vw, 2rem);
+    font-size: clamp(0.9rem, 1vw, 2rem);
     padding: 1.8vw 8vw;
     display: flex;
     align-items: center;
@@ -43,23 +42,26 @@ body {
 }
 
 .header-text {
-    padding: 4vw 8vw;
+    padding: 4vw 8vw 4vw 0;
     max-width: 100ch;
 }
 
 .header-text p {
     color: var(--text-dim);
     font-size: clamp(1rem, 2vw, 1.3rem);
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .header-text a {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
     border: 1px solid var(--gold);
     color: var(--text-dim);
     font-size: clamp(1rem, 1vw, 2rem);
     font-weight: 500;
-    padding: 1vw 1.5vw;
+    width: 180px;
+    padding: 1vw;
     transition: background 0.2s ease, color 0.2s ease;
 }
 
@@ -73,7 +75,7 @@ body {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
-    padding: 6vw 8vw;
+    padding: 4vw 8vw;
 }
 
 .about-image {
@@ -143,7 +145,7 @@ body {
 }
 
 .stats-section {
-    padding: 6vw 8vw;
+    padding: 6vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -155,7 +157,7 @@ body {
 }
 
 .stats span {
-    font-size: 4rem;
+    font-size: 6rem;
     font-weight: 600;
     color: var(--gold);
 }
@@ -188,7 +190,7 @@ form {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    padding: 3vw 8vw;
+    padding: 8vw;
 }
 
 form > * {
@@ -213,6 +215,7 @@ form textarea:focus {
 
 form button {
     width: 30%;
+    margin-top: 1rem;
     padding: 1.5vw;
     text-align: center;
     background: var(--gold);
@@ -236,16 +239,15 @@ footer {
     font-size: clamp(1rem, 1.3vw, 2rem);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 575px) {
     .header-image {
-        height: 20vh;
-        margin-bottom: -3%;
+        height: clamp(20vh, 25vw, 30vh);
     }
     .header-text {
         padding: 12vw 8vw;
     }
     .header-text a {
-        padding: 2.5vw 4vw;
+        padding: 3vw 0;
         transition: background 0.2s ease, color 0.2s ease;
     }
     .header-text a:active {
@@ -268,20 +270,28 @@ footer {
     }
     .about-image img {
         width: 100%;
-        max-width: 350px;
+        max-width: 500px;
         height: 250px;
     }
     .services-section {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: auto;
+        grid-template-rows: auto;
     }
     .service {
-        padding: 6vw 3vw;
+        display: flex;
+        align-items: center;
+        padding: 8vw 4vw;
+    }
+    .service p {
+        text-align: center;
     }
     .stats-section {
         flex-direction: column;
-        gap: 30px;
-        padding: 14vw 8vw;
+        gap: 35px;
+        margin: 4rem 0;
+    }
+    .stats span {
+        font-size: 5rem;
     }
     .form-text {
         padding: 8vw;
@@ -303,19 +313,67 @@ footer {
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 576px) and (max-width: 767px) {
     .header-image {
-        margin-bottom: -3%;
-        height: 25vh;
+        height: clamp(20vh, 30vw, 40vh);
     }
     .header-text {
         padding: 6vw 8vw;
     }
     .header-text p {
-        margin-bottom: 3rem;
+        margin-bottom: 1.5rem;
     }
     .header-text a {
-        padding: 2vw 3vw;
+        padding: 1.5vw 0;
+    }
+    .about-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .about-image {
+        text-align: center;
+    }
+    .about-image img {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+    }
+    .about-text p {
+        padding-left: 0;
+    }
+    .services-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .service {
+        padding: 4vw 3vw;
+    }
+    .stats-section {
+        padding: 8vw;
+    }
+    .stats span {
+        font-size: 4rem;
+    }
+    form {
+        padding: 10vw 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+    .header-title {
+        min-height: 8vh;
+    }
+    .header-image {
+        height: clamp(20vh, 25vw, 40vh);
+    }
+    .header-text {
+        padding: 6vw 8vw;
+        margin-top: 1rem;
+    }
+    .header-text p {
+        margin-bottom: 2rem;
+    }
+    .header-text a {
+        padding: 1.5vw 0;
     }
     .about-section {
         flex-direction: column;
@@ -325,10 +383,15 @@ footer {
     }
     .about-image img {
         margin-bottom: 3rem;
-        width: 600px;
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
     }
     .about-text p {
         padding-left: 0;
+    }
+    .service {
+        padding: 4vw 2vw 4vw 1vw;
     }
     .stats-section {
         flex-direction: row;
